@@ -43,7 +43,7 @@ export class DashboardComponent implements OnInit, DoCheck {
   ngDoCheck() {
     if (this.isRefresh.getFlag()) {
       this.isRefresh.setFlag(false);
-      this.getHeroes();
+      this.getHeroes().aaa;
     }
   }
   showStatus(heroID: string) {
