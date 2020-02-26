@@ -1,0 +1,40 @@
+<h2 class="bg-dark text-white" style="padding-left: 10px">My Heroes</h2>
+<div style="padding-left: 20px">
+  <div class="heroes row" style="margin: auto;">
+    <div class="col-md-4">
+      <div *ngFor="let hero of heroes1">
+        <a routerLink="/detail/{{hero.HeroID}}">
+          <span class="badge">Lv:{{hero.HeroLevel}}</span>
+          <label>{{hero.HeroName}}</label>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div *ngFor="let hero of heroes2">
+        <a routerLink="/detail/{{hero.HeroID}}">
+          <span class="badge">Lv:{{hero.HeroLevel}}</span>
+          <label>{{hero.HeroName}}</label>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div *ngFor="let hero of heroes3">
+        <a routerLink="/detail/{{hero.HeroID}}">
+          <span class="badge">Lv:{{hero.HeroLevel}}</span>
+          <label>{{hero.HeroName}}</label>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col text-center">
+        <button class="btn btn-success" (click)="AddHero()">Add Hero</button>
+    </div>
+  </div>
+</div>
+<ngx-spinner>
+    <p class="loading">Heroes are assembling</p>
+</ngx-spinner>

@@ -1,0 +1,19 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+  <a *ngFor="let hero of heroes" class="col-md-4">
+    <div class="card" style="width: 200px">
+      <img src="assets/{{showIcon(hero)}}.png" class="card-img-bottom" style="width: 45px; height: 45px;">
+      <div class="card-body">
+        <h5 class="card-title">{{hero.HeroName}}</h5>
+        <p class="card-text">{{hero.HeroJob}}</p>
+        <div>
+          <a class="btn btn-success" style="margin-bottom: 10px;" (click)="showStatus(hero.HeroID)">Hero Status</a>
+          <a class="btn btn-success" routerLink="/detail/{{hero.HeroID}}">Hero Detail</a>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
+<ngx-spinner>
+    <p class="loading">Calculating Top Heroes</p>
+</ngx-spinner>

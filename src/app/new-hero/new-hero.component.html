@@ -1,0 +1,37 @@
+<h2 class="bg-dark text-white" style="padding-left: 10px">Register for {{hero.HeroName | uppercase}}</h2>
+<table class="table" style="width: 100%">
+    <tr>
+        <th>Name:</th>
+        <td><input class="form-control" [(ngModel)]="hero.HeroName" placeholder="Hero Name"/></td>
+    </tr>
+    <tr>
+        <th>Job:</th>
+        <td><input class="form-control" [(ngModel)]="hero.HeroJob" placeholder="Assign Job"/></td>
+    </tr>
+    <tr>
+        <th>Class:</th>
+        <td><input class="form-control" [(ngModel)]="hero.HeroClass" placeholder="Assign Class"/></td>
+    </tr>
+    <tr>
+        <th>Race:</th>
+        <td><input class="form-control" [(ngModel)]="hero.HeroRace" placeholder="Assign Race"/></td>
+    </tr>
+    <tr>
+        <th>Level:</th>
+        <td><input class="form-control" type="number" min=1 max=100 [(ngModel)]="hero.HeroLevel" placeholder="Level"></td>
+    </tr>
+    
+    <tr>
+        <th>Description:</th>
+        <td><textarea class="form-control" [(ngModel)]="hero.DescriptionInfo" placeholder="Hero additional info"></textarea></td>
+    </tr>
+</table>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <button [disabled]="!allowAdd" class="btn btn-success" (click)="confirmDialog()">Add Hero</button>
+            <button class="btn btn-secondary" (click)="goBack()">Back</button>
+        </div>
+    </div>
+</div>

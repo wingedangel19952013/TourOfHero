@@ -1,0 +1,44 @@
+<div *ngIf="hero">
+    <h2 class="bg-dark text-white" style="padding-left: 10px">{{hero.HeroName | uppercase}} Details</h2>
+    <div class="row" style="width: 100%">
+      <div class="col-md-8">
+          <table class="table" style="width: 100%">
+              <tr>
+                <th>Name:</th>
+                <td><input class="form-control" [(ngModel)]="hero.HeroName" placeholder="name"/></td>
+              </tr>
+              <tr>
+                <th>Job:</th>
+                <td>{{hero.HeroJob}}</td>
+              </tr>
+              <tr>
+                <th>Class:</th>
+                <td><input class="form-control" [(ngModel)]="hero.HeroClass" placeholder="Assigned class"/></td>
+              </tr>
+              <tr>
+                <th>Race:</th>
+                <td><input class="form-control" [(ngModel)]="hero.HeroRace" placeholder="Hero Race"/></td>
+              </tr>
+              <tr>
+                <th>Level:</th>
+                <td><input class="form-control" type="number" [(ngModel)]="hero.HeroLevel" placeholder="Current Level"/></td>
+              </tr>
+              <tr>
+                <th>Description:</th>
+                <td><textarea class="form-control" [(ngModel)]="hero.DescriptionInfo" placeholder="Hero additional info"></textarea></td>
+              </tr>
+              <tr>
+                <button class="btn btn-primary" (click)="editHero()">Edit</button>
+                <button class="btn btn-danger" (click)="deleteHero()">Delete</button>
+                <button class="btn btn-secondary" (click)="goBack()">Go back</button>
+              </tr>
+            </table>
+      </div>
+      <div class="col-md-3">
+        <img src="assets/{{showIcon(hero)}}.png">
+      </div>
+    </div> 
+  </div>
+  <ngx-spinner type="ball-spin-clockwise-fade">
+      <p class="loading">Loading</p>
+  </ngx-spinner>
